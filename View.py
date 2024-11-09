@@ -15,23 +15,7 @@ adaptive_thresh = cv2.adaptiveThreshold(
 
 # Define coordinates for checkboxes
 checkboxes = {
-    "Partido Nuevo Progresista": (497, 334, 114, 84),
-    "Partido Popular Democrático": (1058, 334, 114, 84),
-    "Movimiento Victoria Ciudadana": (1619, 334, 114, 84),
-    "Partido Independentista Puertorriqueño": (2180, 334, 114, 84),
-    "Proyecto Dignidad": (2742, 335, 113, 83),
-    "Jennifer González": (355, 636, 77, 52),
-    "William Villafañe": (355, 817, 77, 52),
-    "Jesús Manuel Ortiz": (917, 636, 77, 52),
-    "Pablo José Hernández Rivera": (917, 817, 77, 52),
-    "Javier Córdova Iturregui": (1479, 636, 76, 52),
-    "Ana Irma Rivera Lassén": (1479, 817, 76, 52),
-    "Juan Dalmau": (2041, 636, 76, 51),
-    "Roberto Karlo Velázquez Correa": (2040, 818, 75, 50),
-    "Javier Jiménez Pérez": (2603, 636, 76, 51),
-    "Viviana Ramírez Morales": (2603, 817, 76, 51),
-    "Write-in Gobernador": (3165, 636, 76, 51),
-    "Write-in Comisionado Residente": (3165, 817, 76, 51)
+    "Movimiento Victoria Ciudadana": (1619, 334, 114, 84)
 }
 
 # Draw rectangles around checkboxes
