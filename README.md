@@ -42,14 +42,14 @@ This project is designed to scan and process state ballots, determine the marked
 
 1. Run the `Database Writer.py` script to scan a ballot image and write the results to the database:
     ```sh
-    python Database\ Writer.py
+    python Database Writer.py
     ```
 
 ### Reading and Displaying Ballot Data
 
 1. Run the `Database Reader.py` script to fetch and display the count of votes for each candidate and party:
     ```sh
-    python Database\ Reader.py
+    python Database Reader.py
     ```
 
 ## License
