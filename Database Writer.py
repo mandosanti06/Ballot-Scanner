@@ -12,7 +12,7 @@ key = os.getenv("SUPABASE_KEY")
 supabase = create_client(url, key)
 
 # Dictionary to be inserted
-data_dict = state_ballot('State Ballot Tests/Alianza.png')
+data_dict = state_ballot('State Ballot Tests/Write In.png')
 
 # Insert Gobernor data
 for gobernor in data_dict['Gobernor']:
