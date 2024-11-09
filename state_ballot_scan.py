@@ -70,6 +70,9 @@ def state_ballot(image_path):
     resident_commissioner_marked = [candidate for candidate in resident_commissioner if results.get(candidate) == "Marked"]
     party_marked = [candidate for candidate in parties if results.get(candidate) == "Marked"]
 
+    if len(party_marked) > 1:
+        party_marked = []
+
     # Parties
     if "Party Nuevo Progresista" in party_marked:
         if gobernor_marked == []:
@@ -116,7 +119,7 @@ def state_ballot(image_path):
             return "Ballot returned for correction."
         else:
             return "Invalid input. Ballot returned."
-    elif len(resident_commissioner_marked) > 1:
+    if len(resident_commissioner_marked) > 1:
         action = input("More than one Resident Commissioner candidate marked. Do you want to vote or correct the ballot? (vote/correct): ")
         if action.lower() == "vote":
             if len(gobernor_marked) == 0:
@@ -134,10 +137,11 @@ def state_ballot(image_path):
             return "Ballot returned for correction."
         else:
             return "Invalid input. Ballot returned."
-    elif len(party_marked) > 1:
+    if len(party_marked) > 1:
         action = input("More than one Pary marked. Do you want to vote or correct the ballot? (vote/correct): ")
         if action.lower() == "vote":
             if len(party_marked) == 0:
+                party_marked = []
                 action = input("There are fewer votes than expected. Do you want to change or vote? (change/vote): ")
                 if action.lower() == "vote":
                     return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
@@ -146,7 +150,6 @@ def state_ballot(image_path):
                 else:
                     return "Invalid input. Ballot returned."
             else:
-                party_marked = []
                 return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
         elif action.lower() == "correct":
             return "Ballot returned for correction."
