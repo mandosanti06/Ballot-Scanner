@@ -17,7 +17,6 @@ for record in data:
         name_counts[name] += 1
     else:
         name_counts[name] = 1
-
 # Grab the nth key in name_counts
 print("The number of votes of each candidate for Gobernor is:")
 key_list = list(name_counts.keys())

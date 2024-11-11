@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Counts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<h1>Vote Counts</h1>
+
+<h2>Gobernor Votes (Total: {{ total_gobernor_votes }})</h2>
+<table>
+    <tr>
+        <th>Candidate</th>
+        <th>Votes</th>
+        <th>Percentage</th>
+    </tr>
+    {% for name, count in gobernor_votes.items() %}
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ count }}</td>
+        <td>{{ gobernor_percentages[name] | round(2) }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Resident Commissioner Votes (Total: {{ total_commissioner_votes }})</h2>
+<table>
+    <tr>
+        <th>Candidate</th>
+        <th>Votes</th>
+        <th>Percentage</th>
+    </tr>
+    {% for name, count in commissioner_votes.items() %}
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ count }}</td>
+        <td>{{ commissioner_percentages[name] | round(2) }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Party Votes (Total: {{ total_party_votes }})</h2>
+<table>
+    <tr>
+        <th>Party</th>
+        <th>Votes</th>
+        <th>Percentage</th>
+    </tr>
+    {% for name, count in party_votes.items() %}
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ count }}</td>
+        <td>{{ party_percentages[name] | round(2) }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Total Votes Counted: {{ total_votes_counted }}</h2>
+</body>
+</html>
