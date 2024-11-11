@@ -103,64 +103,64 @@ def state_ballot(image_path):
     # Determine the ballot status
     if len(gobernor_marked) > 1:
         action = input("More than one Gobernor candidate marked. Do you want to vote or correct the ballot? (vote/correct): ")
-        if action.lower() == "vote":
+        if action.lower() == "":
             if len(resident_commissioner_marked) == 0:
                 action = input("There are fewer votes than expected. Do you want to change or vote? (change/vote): ")
-                if action.lower() == "vote":
+                if action.lower() == "":
                     return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-                elif action.lower() == "change":
+                elif action.lower() == "":
                     return "Ballot returned for change."
                 else:
                     return "Invalid input. Ballot returned."
             else:
                 gobernor_marked = []
                 return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-        elif action.lower() == "correct":
+        elif action.lower() == "":
             return "Ballot returned for correction."
         else:
             return "Invalid input. Ballot returned."
     if len(resident_commissioner_marked) > 1:
         action = input("More than one Resident Commissioner candidate marked. Do you want to vote or correct the ballot? (vote/correct): ")
-        if action.lower() == "vote":
+        if action.lower() == "":
             if len(gobernor_marked) == 0:
                 action = input("There are fewer votes than expected. Do you want to change or vote? (change/vote): ")
-                if action.lower() == "vote":
+                if action.lower() == "":
                     return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-                elif action.lower() == "change":
+                elif action.lower() == "":
                     return "Ballot returned for change."
                 else:
                     return "Invalid input. Ballot returned."
             else:
                 resident_commissioner_marked = []
                 return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-        elif action.lower() == "correct":
+        elif action.lower() == "":
             return "Ballot returned for correction."
         else:
             return "Invalid input. Ballot returned."
     if len(party_marked) > 1:
         action = input("More than one Pary marked. Do you want to vote or correct the ballot? (vote/correct): ")
-        if action.lower() == "vote":
+        if action.lower() == "":
             if len(party_marked) == 0:
                 party_marked = []
                 action = input("There are fewer votes than expected. Do you want to change or vote? (change/vote): ")
-                if action.lower() == "vote":
+                if action.lower() == "":
                     return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-                elif action.lower() == "change":
+                elif action.lower() == "":
                     return "Ballot returned for change."
                 else:
                     return "Invalid input. Ballot returned."
             else:
                 return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-        elif action.lower() == "correct":
+        elif action.lower() == "":
             return "Ballot returned for correction."
         else:
             return "Invalid input. Ballot returned."
     else:
         if len(gobernor_marked) == 0 or len(resident_commissioner_marked) == 0:
             action = input("There are fewer votes than expected. Do you want to change or vote? (change/vote): ")
-            if action.lower() == "vote":
+            if action.lower() == "":
                 return {'Gobernor': gobernor_marked, 'Resident Commissioner': resident_commissioner_marked, 'Party': party_marked}
-            elif action.lower() == "change":
+            elif action.lower() == "":
                 return "Ballot returned for change."
             else:
                 return "Invalid input. Ballot returned."
